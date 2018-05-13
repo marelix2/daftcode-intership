@@ -15,6 +15,14 @@
         <object type="image/svg+xml" data="assets/logo_awesome.svg">  </object>
     </div>
 
+    <div class="header-burger">
+        <object class="burger-ico" type="image/svg+xml" data="assets/hamburger_menu.svg">  </object>
+    </div>
+
+
+
+
+
     <div class="header-nav">
         <ul>
             <li><a href="#">features</a></li>
@@ -24,6 +32,8 @@
         </ul>
     </div>
 
+
+
 </div>
 <div class="container">
 
@@ -32,7 +42,7 @@
     </div>
     <div id="clip">
 
-        <object id="clipA" type="image/svg+xml" data="assets/kolko_kwadrat.svg"> </object>
+        <object class="clipA" type="image/svg+xml" data="assets/kolko_kwadrat.svg"></object>
 
     </div>
 
@@ -41,9 +51,9 @@
         <p> Look carefully and notice every detail, nothing tricky trough.</p>
 
          <ul>
-             <li><object type="image/svg+xml" data="assets/fb.svg"></object>  / awesome</li>
-             <li><object type="image/svg+xml" data="assets/twitter.svg"></object> / awesome </li>
-             <li><object type="image/svg+xml" data="assets/google+.svg"></object> / awesome</li>
+             <li><object class="social_ico" type="image/svg+xml" data="assets/fb.svg"></object>  / awesome</li>
+             <li><object class="social_ico" type="image/svg+xml" data="assets/twitter.svg"></object> / awesome </li>
+             <li><object class="social_ico" type="image/svg+xml" data="assets/google+.svg"></object> / awesome</li>
          </ul>
 
     </div>
@@ -51,10 +61,16 @@
 
     <div class="more">
 
-        <svg width="120" height="120">
+        <svg width="120" height="120" class="btn_more">
             <!--<rect x="10" y="10" rx="10" ry="10" width="150" height="150"  fill="white"/>-->
             <polygon points="60,60 120,120 0,120" style="fill:white"/>
             <text x="40" y="100"> more</text>
+        </svg>
+
+        <svg width="60" height="60" class="btn_plus">
+            <!--<rect x="10" y="10" rx="10" ry="10" width="150" height="150"  fill="white"/>-->
+            <polygon points="30,30 60,60  0,60" style="fill:white"/>
+            <text x="25" y="55"> + </text>
         </svg>
 
     </div>
@@ -62,6 +78,7 @@
 </div>
 
 <script src="js/click-animation.js"></script>
+<script src="js/burger-menu.js"></script>
 
 </body>
 </html> 

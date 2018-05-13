@@ -1,36 +1,53 @@
-body{
+body {
 
-	margin: auto 0;
-	background: #001820;
-	font-family: 'Raleway';
-	font-weight: 200;
-	color: #fff;
-
+    margin: auto 0;
+    background: #001820;
+    font-family: 'Raleway';
+    font-weight: 200;
+    color: #fff;
+    overflow:hidden;
 }
- a{
-     color: #fff;
-     text-decoration: none;
- }
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul{
+    padding: 0;
+}
+
 /*------------------Background + bg image------------------*/
 .content-wrapper {
-	margin: 0 auto;
-	position: relative;
+    margin: 0 auto;
+    position: relative;
 }
 
-.content-wrapper::after{
-	content: '';
-	position: absolute;
-	background: url("../assets/bg_image.jpg")no-repeat center top fixed;
-	background-size: cover;
-	width: 100%;
+.content-wrapper::after {
+    content: '';
+    position: absolute;
+    background: url("../assets/bg_image.jpg") no-repeat center top fixed;
+    background-size: cover;
+    width: 100%;
     height: 100%;
-	opacity: 0.5;
-	top: 0;
-	left: 0;
-	z-index: -2;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    z-index: -2;
 }
 
-@media (min-width: 1440px){
+/*------------------- 320x530 -------------------*/
+@media (max-width: 320px) {
+    body{
+        overflow:hidden;
+    }
+    .content-wrapper::after {
+        height: 110%;
+
+    }
+}
+/*------------------- +1440px width -------------------*/
+@media (min-width: 1441px) {
     .content-wrapper::after {
         background-size: contain;
 
@@ -38,64 +55,64 @@ body{
 }
 
 /*------------------Logo +  nav------------------*/
-.header{
-	display: flex;
-	height: 20vh;
-	align-items: center;
-	justify-content:space-around;
+.header {
+    display: flex;
+    height: 20vh;
+    align-items: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 
-
-
-}
-.logo{
-
-	flex-basis: 15vw;
 }
 
+.logo {
 
-.header-nav{
+    flex-basis: 15vw;
+}
+
+.header-nav {
     flex-basis: 50vw;
 }
 
-.header-nav ul{
+.header-nav ul {
     display: flex;
-	list-style-type: none;
+    list-style-type: none;
     align-items: baseline;
-	justify-content:space-around;
+    justify-content: space-around;
 
 }
-.header-nav ul li{
+
+.header-nav ul li {
     font-size: 1em;
-	text-transform: uppercase;
-	font-family: 'Raleway';
-	font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+    font-weight: 600;
 }
 
-.header-nav ul li a{
+.header-nav ul li a {
     padding: 10px 15px;
 
 }
-.header-nav ul li a:hover{
+
+.header-nav ul li a:hover {
     position: relative;
 }
-.header-nav ul li a:hover:after{
-    display:block;
+
+.header-nav ul li a:hover:after {
+    display: block;
     content: "";
-    width:50%;
-    height:4px;
-    border-bottom:4px solid white;
+    width: 50%;
+    height: 4px;
+    border-bottom: 4px solid white;
     position: absolute;
-    left:0;
+    left: 0;
     bottom: -4px;
 }
 
-.header-nav ul li a:active{
-   border-bottom: 4px #fff solid;
+.header-nav ul li a:active {
+    border-bottom: 4px #fff solid;
 }
 
-
- .contact a{
+.contact a {
 
     border: 4px #fff solid;
     border-radius: 5px;
@@ -106,14 +123,46 @@ body{
     color: #001820;
 }
 
-
+.header-burger{
+    visibility: hidden;
+}
 
 /*@media (max-width: 980px){*/
 
-    /*.header-nav{*/
-        /*visibility: hidden;*/
-    /*}*/
+/*.header-nav{*/
+/*visibility: hidden;*/
 /*}*/
+/*}*/
+
+@media (max-width: 980px) {
+
+    .header {
+        padding-top: 2vh;
+        padding-left: 25vw;
+        height: 8vh;
+
+    }
+
+    .logo {
+        flex-basis: 30vw;
+
+
+    }
+
+    .header-nav {
+        visibility: hidden;
+    }
+
+    .header-burger{
+        visibility: visible;
+        flex-basis: 8vw;
+
+    }
+
+}
+
+
+/*--------------------------------------*/
 
 @media (min-width: 1440px) {
 
@@ -123,53 +172,57 @@ body{
         width: 1440px;
     }
 }
+
 /*------------------------------------*/
-.container{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     height: 80vh;
 
+}
+
+#clip, .text_dizzy, .socials, .more {
+
+    width: 40vw;
 
 }
 
-#clip, .text_dizzy , .socials, .more{
-
-    width: 35vw;
-
-}
-
-.text_dizzy , .socials, .more {
+.text_dizzy, .socials, .more {
     flex-basis: 12vh;
 }
 
-#clip{
+#clip {
     flex-basis: 22vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-   /*  */
+    /*  */
 
 }
 
-.clipAnimation{
-    animation:example 4s linear;
+.clipAnimation {
+    animation: example 2s linear;
 }
 
 @keyframes example {
-    0%{ transform:rotate(0deg); }
-    100% { transform:rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .text_dizzy {
     color: #000;
-    font-size: 1.8em ;
+    font-size: 1.8em;
     flex-basis: 20vh;
     text-align: center;
 }
 
-.awe{
+.awe {
     font-family: "Raleway";
     font-weight: 600;
     color: #fff;
@@ -179,46 +232,254 @@ body{
     font-family: "Raleway";
     font-weight: 600;
 
-
 }
 
 .socials p {
     text-align: center;
+    flex-basis: 5vh;
 }
-
 
 .socials ul {
     display: flex;
     list-style-type: none;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: baseline;
     line-height: 2em;
-
+    padding-left: 5vh;
 
 }
 
-.socials ul li{
-    flex-basis: 15vw;
-    padding: 5px 10px;
+.social_ico {
+    width: 1.2vw;
+    height: 1.2vw;
 }
 
+.socials ul li {
+    font-size: .8em;
+    text-transform: uppercase;
+    flex-basis: 15vh;
+    width: 20vw;
 
+}
 
-.more{
+.more {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.more text{
+.more text {
     text-align: center;
     text-transform: uppercase;
     font-weight: 600;
     font-size: .8em;
 
+}
 
+.btn_plus{
+    visibility: hidden;
+}
+
+
+@media only screen and (max-width: 530px) {
+    .container {
+        justify-content: space-between;
+        height: 90vh;
+
+    }
+
+    .text_dizzy {
+        color: #fff;
+        font-size: 1.1em;
+
+    }
+
+    #clip, .text_dizzy, .socials, .more {
+        /*border: red 1px solid;*/
+        width: 60vw;
+
+    }
+
+    .socials {
+
+        display: flex;
+        flex-direction: column;
+        flex-basis: 30vh;
+
+    }
+
+    #clip {
+        flex-basis: 12vh;
+    }
+
+    .clipA {
+
+        width: 18vw;
+        height: 18vw;
+    }
+
+    .socials p {
+        text-align: center;
+        font-size: .6em;
+        line-height: 3.5vh;
+    }
+
+    .socials ul {
+        display: flex;
+        flex-direction: column;
+        padding-left: 15vw;
+
+    }
+
+    .socials ul li {
+        width: 60vw;
+        font-size: .8em;
+
+    }
+
+    .social_ico {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .more{
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .btn_more{
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .btn_plus{
+        visibility: visible;
+    }
+
+    .more text {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.5em;
+
+    }
+
+}
+/*--------- burger nav ------------*/
+
+.burger_body {
+
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background: #001820;
+
+}
+.burger_top{
+    display: flex;
+    height: 20vh;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 25vw;
+    padding-top: 2vh;
+    height: 8vh;
+}
+.burger_middle {
+
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60vh;
+}
+
+.burger_middle ul {
+
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    flex-basis: 60vh;
 
 }
 
+.burger_middle ul li {
+
+    font-size: 1em;
+    flex-basis: 18vh;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+    font-weight: 600;
+
+}
+
+.burger_middle ul li a {
+
+    padding-bottom: 1vh;
+}
+
+.burger_middle ul li a:hover {
+    position: relative;
+}
+
+.burger_middle ul li a:hover:after {
+    display: block;
+    content: "";
+    width: 50%;
+    height: 4px;
+    border-bottom: 4px solid white;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.burger_middle ul li a:active {
+    border-bottom: 4px #fff solid;
+}
+
+
+.burger_middle .contact a {
+    padding: 1vh 20vw;
+    border: 4px #fff solid;
+    border-radius: 5px;
+}
+
+.burger_middle .contact a:hover {
+    background: white;
+    color: #001820;
+}
+
+
+.burger_socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger_socials ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 2em;
+
+}
+
+.burger_socials ul li {
+    font-size: .8em;
+    text-transform: uppercase;
+    flex-basis: 20vh;
+    align-items: center;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+}
+
+.burger_socials .social_ico {
+    width: 7vw;
+    height: 7vw;
+}
 
 

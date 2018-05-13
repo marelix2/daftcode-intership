@@ -1,11 +1,32 @@
-(function () {
 
-    document.getElementById('clipA').addEventListener("mousedown", function (event) {
-        console.log("wywoluje event", event);
-        document.getElementById('clipA').classList.add('clipAnimation');
+        // let element = document.querySelector('.clipA');
+        // console.log(element);
+        //
+        // element.addEventListener("click", function () {
+        //     let el = document.querySelector('.clipA');
+        //     el.classList.add('clipAnimation');
+        //
+        //     setTimeout(function () {
+        //         el.classList.remove('clipAnimation');
+        //     }, 2000);
+        // });
 
-        setTimeout(function () {
-            document.getElementById('clipA').classList.remove('clipAnimation');
-        },2000);
-    })
-})();
+
+    (()=>{
+
+            const svg = document.querySelector('.clipA');
+
+            svg.addEventListener("load", () => {
+                const image = svg.contentDocument.rootElement;
+                image.addEventListener('click', () => {
+                    svg.classList.add('clipAnimation');
+
+                    setTimeout(() => {
+                        svg.classList.remove('clipAnimation');
+
+                    }, 2000);
+                });
+
+
+            })
+        })();
